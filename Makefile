@@ -6,7 +6,7 @@
 #    By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 15:40:17 by pceccoli          #+#    #+#              #
-#    Updated: 2021/06/09 17:20:58 by pceccoli         ###   ########.fr        #
+#    Updated: 2021/06/09 17:32:14 by pceccoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,9 @@ $(LIBFT) :
 
 $(SERVER) : main_server.o error.o includes/minitalk.h
 	@$(CC) main_server.o error.o $(LIBS) -o $@
-	@printf "\e[38;5;226m./$@ successfully build🥑\e[0m\n"
 
 $(CLIENT) : main_client.o error.o includes/minitalk.h
 	@$(CC) main_client.o error.o $(LIBS) -o $@
-	@printf "\e[38;5;46m./$@ successfully build🥝\e[0m\n"
 
 %.o : %.c
 	@$(CC) $(FLAGS) $< -c -I includes

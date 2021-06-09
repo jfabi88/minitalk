@@ -6,7 +6,7 @@
 #    By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 15:40:17 by pceccoli          #+#    #+#              #
-#    Updated: 2021/06/09 17:36:27 by pceccoli         ###   ########.fr        #
+#    Updated: 2021/06/09 17:43:39 by pceccoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,13 @@ SERVER_SRC = server.c /
 			utils.c /
 			utils2.c /
 
-
+CLIENT_SRC = client.c
+			error.c
 
 all : $(SERVER) $(CLIENT)
 
-$(SERVER) : server.o error.o minitalk.h
-	@$(CC) server.o error.o $(LIBS) -o $@
+$(SERVER) : server.o utils.o utils2.o minitalk.h
+	@$(CC) server.o utils.o utils2.o -o $@ 
 
 $(CLIENT) : client.o error.o minitalk.h
 	@$(CC) client.o error.o $(LIBS) -o $@
@@ -36,9 +37,9 @@ $(CLIENT) : client.o error.o minitalk.h
 	@$(CC) $(FLAGS) $< -c -I minitalk.h
 
 clean :
-	@rm -f *.o
-	
+	@rm -rf *.o
+
 fclean: clean
-	@rm -f $(SERVER) $(CLIENT)
+	@rm -rf $(SERVER) $(CLIENT)
 
 re: fclean all

@@ -6,7 +6,7 @@
 #    By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 15:40:17 by pceccoli          #+#    #+#              #
-#    Updated: 2021/06/09 17:34:24 by pceccoli         ###   ########.fr        #
+#    Updated: 2021/06/09 17:36:27 by pceccoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,7 @@ SERVER_SRC = server.c /
 
 
 
-all : $(LIBFT) $(SERVER) $(CLIENT)
-
-$(LIBFT) : 
-	@make -C libft
+all : $(SERVER) $(CLIENT)
 
 $(SERVER) : server.o error.o minitalk.h
 	@$(CC) server.o error.o $(LIBS) -o $@
@@ -36,14 +33,12 @@ $(CLIENT) : client.o error.o minitalk.h
 	@$(CC) client.o error.o $(LIBS) -o $@
 
 %.o : %.c
-	@$(CC) $(FLAGS) $< -c -I includes
+	@$(CC) $(FLAGS) $< -c -I minitalk.h
 
 clean :
-	@make clean -C libft
 	@rm -f *.o
 	
 fclean: clean
-	@make fclean -C libft
 	@rm -f $(SERVER) $(CLIENT)
 
 re: fclean all

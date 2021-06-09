@@ -6,7 +6,7 @@
 #    By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 15:40:17 by pceccoli          #+#    #+#              #
-#    Updated: 2021/06/09 17:32:14 by pceccoli         ###   ########.fr        #
+#    Updated: 2021/06/09 17:34:24 by pceccoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,11 @@ all : $(LIBFT) $(SERVER) $(CLIENT)
 $(LIBFT) : 
 	@make -C libft
 
-$(SERVER) : main_server.o error.o includes/minitalk.h
-	@$(CC) main_server.o error.o $(LIBS) -o $@
+$(SERVER) : server.o error.o minitalk.h
+	@$(CC) server.o error.o $(LIBS) -o $@
 
-$(CLIENT) : main_client.o error.o includes/minitalk.h
-	@$(CC) main_client.o error.o $(LIBS) -o $@
+$(CLIENT) : client.o error.o minitalk.h
+	@$(CC) client.o error.o $(LIBS) -o $@
 
 %.o : %.c
 	@$(CC) $(FLAGS) $< -c -I includes

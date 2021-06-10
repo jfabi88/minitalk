@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 17:13:18 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/08 17:16:38 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/10 12:07:50 by pceccoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void ft_check_error(int argc, char *argv[])
+void	ft_check_error(int argc, char *argv[])
 {
 	if (argc != 3)
 		exit(0);

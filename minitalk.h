@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:50:31 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/08 17:51:24 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/10 12:16:01 by pceccoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
-#define MINITALK_H
+# define MINITALK_H
 
 # include <unistd.h>
 # include <stdio.h>

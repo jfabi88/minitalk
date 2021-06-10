@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/09 12:52:26 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/10 15:29:16 by pceccoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void ft_count(int sign)
+void	ft_count(int sign)
 {
-	static int cont;
-	static int carattere;
-	static int indx;
-	static char string[100];
-	
+	static int	cont;
+	static int	carattere;
+	static int	indx;
+	static char	string[100];
+
 	cont++;
 	if (sign == SIGUSR2)
 	{
@@ -41,11 +41,11 @@ void ft_count(int sign)
 	}
 }
 
-int main(void)
+int	main(void)
 {
-	int pid;
-	char *piddino;
-	int count1;
+	int		pid;
+	char	*piddino;
+	int		count1;
 
 	count1 = -1;
 	pid = getpid();
@@ -54,6 +54,6 @@ int main(void)
 	write(1, "\n", 1);
 	signal(SIGUSR1, ft_count);
 	signal(SIGUSR2, ft_count);
-	while(1)
+	while (1)
 		pause();
 }

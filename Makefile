@@ -6,7 +6,7 @@
 #    By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 15:40:17 by pceccoli          #+#    #+#              #
-#    Updated: 2021/06/09 17:54:44 by pceccoli         ###   ########.fr        #
+#    Updated: 2021/06/10 12:50:42 by pceccoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(CLIENT) : client.o error.o utils.c utils2.c minitalk.h
 	@$(CC) client.o error.o utils.c utils2.c -o $@
 
 %.o : %.c
-	@$(CC) -c $(SERVER_SRC) $(CLIENT_SRC) -c -I minitalk.h
+	@$(CC) $(SERVER_SRC) $(CLIENT_SRC) -c -I minitalk.h
 
 clean :
 	@rm -rf *.o

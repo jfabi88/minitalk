@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/09 13:59:32 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/10 15:28:09 by pceccoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-char *ft_ctobit(char carattere)
+char	*ft_ctobit(char carattere)
 {
-	int i;
-	char *ret;
+	int		i;
+	char	*ret;
 
 	ret = malloc(sizeof(8));
 	if (ret == 0)
@@ -38,9 +38,9 @@ char *ft_ctobit(char carattere)
 	return (ret);
 }
 
-void ft_send_term(int pid)
+void	ft_send_term(int pid)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 7)
@@ -51,7 +51,7 @@ void ft_send_term(int pid)
 	}
 }
 
-void ft_send_signal(int pid, char *string)
+void	ft_send_signal(int pid, char *string)
 {
 	int		i;
 	int		j;
@@ -76,13 +76,27 @@ void ft_send_signal(int pid, char *string)
 	ft_send_term(pid);
 }
 
-int main(int argc, char *argv[])
+void	send_pid(int server_pid, int client_pid)
 {
-	struct sigaction sig;
-	struct sigaction old_sig;
-	int pid;
-	int i;
-	char *string;
+	int tmp;
+
+	while (client_pid)
+	{
+		tmp = client_pid % 2;
+		client_pid /= 2;
+	}
+}
+
+int	main(int argc, char *argv[])
+{
+	struct sigaction	sig;
+	struct sigaction	old_sig;
+	int					client_pid;
+	int					pid;
+	int					i;
+	char				*string;
+
+	client_pid = getpid();
 
 	ft_check_error(argc, argv);
 	i = 0;

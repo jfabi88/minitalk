@@ -3,21 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 15:29:16 by pceccoli         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:27:40 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
+char	*ft_create_string(char carattere, char *string)
+{
+	char	*temp;
+	char	*temp2;
+
+	temp = malloc(2);
+	if (temp == 0)
+		exit(0);
+	temp[0] = carattere;
+	temp[1] = 0;
+	if (string == 0)
+	{
+		string = malloc(2);
+		if (string == 0)
+			exit(0);
+		ft_strlcpy(string, temp, 2);
+	}
+	else
+	{
+		temp2 = string;
+		string = ft_strjoin(string, temp);
+		free(temp2);
+	}
+	free(temp);
+	return (string);
+}
+
 void	ft_count(int sign)
 {
 	static int	cont;
 	static int	carattere;
-	static int	indx;
-	static char	string[100];
+	static char	*string;
 
 	cont++;
 	if (sign == SIGUSR2)
@@ -29,12 +55,12 @@ void	ft_count(int sign)
 		carattere = carattere << 1;
 	if (cont == 7)
 	{
-		string[indx] = carattere;
-		indx++;
+		string = ft_create_string(carattere, string);
 		if (carattere == 0)
 		{
 			ft_putstr_fd(string, 1);
-			indx = 0;
+			free(string);
+			string = 0;
 		}
 		cont = 0;
 		carattere = 0;

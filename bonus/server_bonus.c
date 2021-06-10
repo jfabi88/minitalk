@@ -6,11 +6,11 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 15:13:35 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:27:29 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 int	ft_count_byte(char kara)
 {
@@ -59,8 +59,7 @@ void	ft_count(int sign)
 {
 	static int	cont;
 	static int	carattere;
-	static int	indx;
-	static char	string[100];
+	static char	*string;
 
 	cont++;
 	if (sign == SIGUSR2)
@@ -72,12 +71,12 @@ void	ft_count(int sign)
 		carattere = carattere << 1;
 	if (cont == 8)
 	{
-		string[indx] = carattere;
-		indx++;
+		string = ft_create_string(carattere, string);
 		if (carattere == 0)
 		{
 			ft_putstr_fd_mod(string, 1);
-			indx = 0;
+			free(string);
+			string = 0;
 		}
 		cont = 0;
 		carattere = 0;

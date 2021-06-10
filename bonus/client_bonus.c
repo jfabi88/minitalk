@@ -6,11 +6,11 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 15:23:04 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:34:07 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 char	*ft_ctobit(char carattere)
 {
@@ -47,7 +47,7 @@ void	ft_send_term(int pid)
 	{
 		kill(pid, SIGUSR1);
 		i++;
-		usleep(1000);
+		usleep(50);
 	}
 }
 
@@ -82,7 +82,7 @@ void	ft_send_signal(int pid, char *string)
 			else
 				kill(pid, SIGUSR2);
 			j++;
-			usleep(1000);
+			usleep(50);
 		}
 		i++;
 		free(temp);

@@ -6,7 +6,7 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 15:35:45 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:36:41 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_send_term(int pid)
 	{
 		kill(pid, SIGUSR1);
 		i++;
-		usleep(10);
+		usleep(50);
 	}
 }
 
@@ -69,8 +69,9 @@ void	ft_send_signal(int pid, char *string)
 			else
 				kill(pid, SIGUSR2);
 			j++;
-			usleep(10);
+			usleep(50);
 		}
+		free(temp);
 		i++;
 	}
 	ft_send_term(pid);

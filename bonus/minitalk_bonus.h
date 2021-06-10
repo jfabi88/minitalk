@@ -6,7 +6,7 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:50:31 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 15:25:09 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:26:29 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,14 @@ void	ft_putchar_fd(char c, int fd);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 void	ft_string_complement(char *string);
+char	*ft_create_string(char carattere, char *string);
+
+/* stringhe */
+
+void	*ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
 #endif

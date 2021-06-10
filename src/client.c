@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 15:28:09 by pceccoli         ###   ########.fr       */
+/*   Updated: 2021/06/10 15:35:45 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_send_signal(int pid, char *string)
 
 void	send_pid(int server_pid, int client_pid)
 {
-	int tmp;
+	int	tmp;
 
 	while (client_pid)
 	{
@@ -89,24 +89,14 @@ void	send_pid(int server_pid, int client_pid)
 
 int	main(int argc, char *argv[])
 {
-	struct sigaction	sig;
-	struct sigaction	old_sig;
-	int					client_pid;
 	int					pid;
 	int					i;
 	char				*string;
 
-	client_pid = getpid();
-
-	ft_check_error(argc, argv);
+	if (argc != 3)
+		exit(0);
 	i = 0;
 	pid = ft_atoi(argv[1]);
 	string = argv[2];
 	ft_send_signal(pid, string);
-	//ft_send_term(pid);
-	//sig.sa_handler = ft_printa2;
-	//sig.sa_flags = 0;
-	//sigemptyset(&sig.sa_mask);
-	//sigaction(SIGUSR1, 0, &old_sig);
-	//sigaction(SIGUSR1, &sig, 0);
 }

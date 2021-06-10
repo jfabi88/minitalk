@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:50:31 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 12:16:01 by pceccoli         ###   ########.fr       */
+/*   Updated: 2021/06/10 15:35:16 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,5 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
-
-/* error */
-
-void	ft_check_error(int argc, char *argv[]);
 
 #endif

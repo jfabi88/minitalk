@@ -6,7 +6,7 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 16:34:07 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:15:00 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	ft_send_signal(int pid, char *string)
 		i++;
 		free(temp);
 	}
-	ft_send_term(pid);
 }
 
 int	main(int argc, char *argv[])
@@ -95,11 +94,20 @@ int	main(int argc, char *argv[])
 	int		pid;
 	int		i;
 	char	*string;
+	char	*temp;
 
 	if (argc != 3)
 		exit (0);
 	i = 0;
 	pid = ft_atoi(argv[1]);
 	string = argv[2];
+	temp = ft_itoa(getpid());
+	if (temp == 0)
+		exit (0);
+	ft_send_signal(pid, "\1");
+	ft_send_signal(pid, temp);
+	ft_send_term(pid);
 	ft_send_signal(pid, string);
+	ft_send_term(pid);
+	free(temp);
 }

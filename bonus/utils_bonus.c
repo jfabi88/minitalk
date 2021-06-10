@@ -6,11 +6,16 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 17:05:38 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 15:59:23 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:11:02 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
+
+void	ft_putchar_fd_mod(char *c, int fd, int byte)
+{
+	write(fd, c, byte);
+}
 
 static int	nlen(int n)
 {

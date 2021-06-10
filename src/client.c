@@ -6,7 +6,7 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 16:36:41 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 19:35:31 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,6 @@ void	ft_send_signal(int pid, char *string)
 		i++;
 	}
 	ft_send_term(pid);
-}
-
-void	send_pid(int server_pid, int client_pid)
-{
-	int	tmp;
-
-	while (client_pid)
-	{
-		tmp = client_pid % 2;
-		client_pid /= 2;
-	}
 }
 
 int	main(int argc, char *argv[])

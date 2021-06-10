@@ -6,7 +6,7 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 16:27:29 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 19:45:36 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ int	ft_count_byte(char kara)
 		count++;
 	}
 	return (count);
-}
-
-void	ft_putchar_fd_mod(char *c, int fd, int byte)
-{
-	write(fd, c, byte);
 }
 
 void	ft_putstr_fd_mod(char *s, int fd)
@@ -55,6 +50,17 @@ void	ft_putstr_fd_mod(char *s, int fd)
 	}
 }
 
+void	ft_notify(char *string, char carattere)
+{
+	if (carattere == 0)
+	{
+		ft_putstr_fd_mod(string, 1);
+		write(1, "\n", 1);
+	}
+	if (carattere == 1)
+		ft_putstr_fd("\033[31;1;4mMessage from client: \033[0m", 1);
+}
+
 void	ft_count(int sign)
 {
 	static int	cont;
@@ -72,9 +78,9 @@ void	ft_count(int sign)
 	if (cont == 8)
 	{
 		string = ft_create_string(carattere, string);
-		if (carattere == 0)
+		if (carattere == 0 || carattere == 1)
 		{
-			ft_putstr_fd_mod(string, 1);
+			ft_notify(string, carattere);
 			free(string);
 			string = 0;
 		}

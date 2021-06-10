@@ -6,7 +6,7 @@
 /*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:50:31 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 16:26:29 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:11:24 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 void	ft_string_complement(char *string);
 char	*ft_create_string(char carattere, char *string);
+void	ft_putchar_fd_mod(char *c, int fd, int byte);
 
 /* stringhe */
 

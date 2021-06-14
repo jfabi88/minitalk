@@ -6,7 +6,7 @@
 /*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 12:27:27 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/14 14:33:17 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	ft_count(int sign)
 		if (carattere == 0)
 		{
 			ft_putstr_fd(string, 1);
+			write(1, "\n", 1);
 			free(string);
 			string = 0;
 		}

@@ -6,7 +6,7 @@
 /*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 12:24:42 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/14 13:33:29 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_ctobit(char carattere)
 	int		i;
 	char	*ret;
 
-	ret = (sizeof(9));
+	ret = malloc(sizeof(9));
 	if (ret == 0)
 		exit(0);
 	ret[8] = 0;
@@ -99,6 +99,8 @@ int	main(int argc, char *argv[])
 	if (argc != 3)
 		exit (0);
 	i = 0;
+	if (ft_check_argv(argv[1]) < 0)
+		exit (0);
 	pid = ft_atoi(argv[1]);
 	string = argv[2];
 	temp = ft_itoa(getpid());

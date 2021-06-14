@@ -6,7 +6,7 @@
 /*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 12:25:35 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/14 14:11:46 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_notify(char *string, char carattere)
 		write(1, "\n", 1);
 	}
 	if (carattere == 1)
-		ft_putstr_fd("\033[31;1;4mMessage from client: \033[0m", 1);
+		ft_putstr_fd("\033[31;1;4mMessage from client:\033[0m ", 1);
 }
 
 void	ft_count(int sign)

@@ -6,7 +6,7 @@
 /*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:50:31 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 12:22:42 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/14 13:13:11 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
+int		ft_check_argv(char *str);
 
 /* stringhe */
 

@@ -6,7 +6,7 @@
 /*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:50:31 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 12:20:21 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/14 13:31:17 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@
 
 char	*ft_itoa(int n);
 void	ft_putstr_fd(char *s, int fd);
-void	ft_putchar_fd(char c, int fd);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 void	ft_string_complement(char *string);
 char	*ft_create_string(char carattere, char *string);
 void	ft_putchar_fd_mod(char *c, int fd, int byte);
+int		ft_check_argv(char *str);
+int		ft_isspace(int c);
+int		ft_isdigit(int c);
 
 /* stringhe */
 

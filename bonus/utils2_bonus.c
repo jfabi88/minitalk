@@ -6,7 +6,7 @@
 /*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 17:20:53 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 12:27:42 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/14 13:31:02 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-static int	ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	if (c == 32)
 		return (1);

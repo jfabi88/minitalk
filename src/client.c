@@ -6,7 +6,7 @@
 /*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 12:22:20 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/14 14:13:54 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,10 @@ int	main(int argc, char *argv[])
 	if (argc != 3)
 		exit(0);
 	i = 0;
+	if (ft_check_argv(argv[1]) < 0)
+		exit (0);
 	pid = ft_atoi(argv[1]);
+	printf("%d\n", pid);
 	string = argv[2];
 	ft_send_signal(pid, string);
 }

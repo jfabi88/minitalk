@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 16:27:40 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/14 12:27:27 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_create_string(char carattere, char *string)
 	{
 		temp2 = string;
 		string = ft_strjoin(string, temp);
+		if (string == 0)
+			exit (0);
 		free(temp2);
 	}
 	free(temp);
@@ -76,6 +78,8 @@ int	main(void)
 	count1 = -1;
 	pid = getpid();
 	piddino = ft_itoa(pid);
+	if (piddino == 0)
+		exit(0);
 	ft_putstr_fd(piddino, 1);
 	write(1, "\n", 1);
 	signal(SIGUSR1, ft_count);

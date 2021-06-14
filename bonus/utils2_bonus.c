@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 17:20:53 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 16:26:34 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/14 12:27:42 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_create_string(char carattere, char *string)
 	{
 		temp2 = string;
 		string = ft_strjoin(string, temp);
+		if (string == 0)
+			exit (0);
 		free(temp2);
 	}
 	free(temp);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/10 18:15:00 by mmurello         ###   ########.fr       */
+/*   Updated: 2021/06/14 12:24:42 by jfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_ctobit(char carattere)
 	int		i;
 	char	*ret;
 
-	ret = malloc(sizeof(9));
+	ret = (sizeof(9));
 	if (ret == 0)
 		exit(0);
 	ret[8] = 0;

@@ -6,7 +6,7 @@
 #    By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 15:40:17 by pceccoli          #+#    #+#              #
-#    Updated: 2021/06/14 14:26:11 by pceccoli         ###   ########.fr        #
+#    Updated: 2021/06/14 14:37:06 by pceccoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,4 +54,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY bonus all clean fclean
+.PHONY : bonus all clean fclean

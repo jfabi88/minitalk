@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:50:31 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 13:31:17 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/17 18:14:19 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_putchar_fd_mod(char *c, int fd, int byte);
 int		ft_check_argv(char *str);
 int		ft_isspace(int c);
 int		ft_isdigit(int c);
+void	ft_end(int sign);
 
 /* stringhe */
 

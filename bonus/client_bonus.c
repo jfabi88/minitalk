@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:19:09 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 13:33:29 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/17 18:11:20 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,11 @@ void	ft_send_signal(int pid, char *string)
 int	main(int argc, char *argv[])
 {
 	int		pid;
-	int		i;
 	char	*string;
 	char	*temp;
 
 	if (argc != 3)
 		exit (0);
-	i = 0;
 	if (ft_check_argv(argv[1]) < 0)
 		exit (0);
 	pid = ft_atoi(argv[1]);
@@ -112,4 +110,6 @@ int	main(int argc, char *argv[])
 	ft_send_signal(pid, string);
 	ft_send_term(pid);
 	free(temp);
+	signal(SIGUSR1, ft_end);
+	pause();
 }

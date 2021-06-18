@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfabi <jfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mmurello <mmurello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:47:49 by jfabi             #+#    #+#             */
-/*   Updated: 2021/06/14 14:11:46 by jfabi            ###   ########.fr       */
+/*   Updated: 2021/06/17 18:02:52 by mmurello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,24 @@ void	ft_putstr_fd_mod(char *s, int fd)
 
 void	ft_notify(char *string, char carattere)
 {
+	static int	counter;
+	static int	pid_cl;
+
 	if (carattere == 0)
-	{
-		ft_putstr_fd_mod(string, 1);
+	{	
+		if (counter == 1)
+		{
+			counter = 0;
+			ft_putstr_fd_mod(string, 1);
+			usleep(100);
+			kill(pid_cl, SIGUSR1);
+		}
+		else if (counter == 0)
+		{
+			pid_cl = ft_atoi(string);
+			counter++;
+			ft_putstr_fd_mod(string, 1);
+		}
 		write(1, "\n", 1);
 	}
 	if (carattere == 1)
